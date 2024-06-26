@@ -8,46 +8,46 @@ import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
 
-public class EnterCheckoutDetails {
+public class EnterCheckoutDetailsActions {
 
     public static Performable enterFirstName(String firstName) {
         return Task.where("{0} enters first name '" + firstName + "'",
-                Enter.theValue(firstName).into(CheckoutForm.FIRSTNAME_FIELD),
-                Hit.the(Keys.ENTER).into(CheckoutForm.FIRSTNAME_FIELD)
+                Enter.theValue(firstName).into(CheckoutPageObjects.FIRSTNAME_FIELD),
+                Hit.the(Keys.ENTER).into(CheckoutPageObjects.FIRSTNAME_FIELD)
         );
     }
 
     public static Performable enterLastName(String lastName) {
         return Task.where("{0} enters last name '" + lastName + "'",
-                Enter.theValue(lastName).into(CheckoutForm.LASTNAME_FIELD),
-                Hit.the(Keys.ENTER).into(CheckoutForm.LASTNAME_FIELD)
+                Enter.theValue(lastName).into(CheckoutPageObjects.LASTNAME_FIELD),
+                Hit.the(Keys.ENTER).into(CheckoutPageObjects.LASTNAME_FIELD)
         );
     }
 
     public static Performable enterEmail(String email) {
         return Task.where("{0} enters email '" + email + "'",
-                Enter.theValue(email).into(CheckoutForm.EMAIL_FIELD),
-                Hit.the(Keys.ENTER).into(CheckoutForm.EMAIL_FIELD)
+                Enter.theValue(email).into(CheckoutPageObjects.EMAIL_FIELD),
+                Hit.the(Keys.ENTER).into(CheckoutPageObjects.EMAIL_FIELD)
         );
     }
 
     public static Performable enterAddress(String address) {
         return Task.where("{0} enters address '" + address + "'",
-                Enter.theValue(address).into(CheckoutForm.ADDRESS_FIELD),
-                Hit.the(Keys.ENTER).into(CheckoutForm.ADDRESS_FIELD)
+                Enter.theValue(address).into(CheckoutPageObjects.ADDRESS_FIELD),
+                Hit.the(Keys.ENTER).into(CheckoutPageObjects.ADDRESS_FIELD)
         );
     }
 
     public static Performable selectCountry(String country) {
         return Task.where("{0} selects country '" + country + "'",
-                SelectFromOptions.byVisibleText(country).from(CheckoutForm.COUNTRY_DROPDOWN)
+                SelectFromOptions.byVisibleText(country).from(CheckoutPageObjects.COUNTRY_DROPDOWN)
         );
     }
 
     public static Performable enterZipCode(String zipCode) {
         return Task.where("{0} enters zip code '" + zipCode + "'",
-                Enter.theValue(zipCode).into(CheckoutForm.ZIP_FIELD),
-                Hit.the(Keys.ENTER).into(CheckoutForm.ZIP_FIELD)
+                Enter.theValue(zipCode).into(CheckoutPageObjects.ZIP_FIELD),
+                Hit.the(Keys.ENTER).into(CheckoutPageObjects.ZIP_FIELD)
         );
     }
 
@@ -55,19 +55,19 @@ public class EnterCheckoutDetails {
         System.out.println("paymentMethod: " + paymentMethod);
         if (paymentMethod.toLowerCase().contains("credit")) {
             return Task.where("{0} selects payment method 'credit'",
-                    Click.on(CheckoutForm.CREDIT_CARD_RADIO)
+                    Click.on(CheckoutPageObjects.CREDIT_CARD_RADIO)
             );
         }
         else {
             return Task.where("{0} selects payment method 'debit'",
-                    Click.on(CheckoutForm.CREDIT_CARD_RADIO)
+                    Click.on(CheckoutPageObjects.CREDIT_CARD_RADIO)
             );
         }
     }
 
     public static Performable clickSubmitButton() {
         return Task.where("{0} clicks the Submit button",
-                Click.on(CheckoutForm.SUBMIT_BUTTON)
+                Click.on(CheckoutPageObjects.SUBMIT_BUTTON)
         );
     }
 }

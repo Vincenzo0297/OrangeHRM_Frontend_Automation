@@ -2,7 +2,7 @@ package starter.fill;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-class CheckoutForm {
+class CheckoutPageObjects {
     static Target FIRSTNAME_FIELD = Target.the("first name").locatedBy("#firstName");
     static Target LASTNAME_FIELD = Target.the("last name").locatedBy("#lastName");
     static Target EMAIL_FIELD = Target.the("email").locatedBy("#email");
