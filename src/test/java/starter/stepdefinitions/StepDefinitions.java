@@ -1,11 +1,10 @@
 package starter.stepdefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import starter.navigation.NavigateToActions;
-import starter.fill.EnterCheckoutDetailsActions;
+import starter.fill.OrangeHRM_Actions;
 
 public class StepDefinitions {
 
@@ -17,7 +16,7 @@ public class StepDefinitions {
     @Then("{actor} enters username {string}")
     public void userEntersUsernameUsername(Actor actor, String username) {
         actor.attemptsTo(
-                EnterCheckoutDetailsActions.enterFirstName(username)
+                OrangeHRM_Actions.enterFirstName(username)
         );
     }
 }
