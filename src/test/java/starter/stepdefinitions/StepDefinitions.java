@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import UilityFunctions.WaitSeconds;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
@@ -10,13 +11,17 @@ public class StepDefinitions {
 
     @Given("{actor} navigates to the login page")
     public void userNavigatesToTheLoginPage(Actor actor) {
-        actor.wasAbleTo(NavigateToActions.theLoginPage());
+        actor.wasAbleTo(
+                NavigateToActions.theLoginPage(),
+                WaitSeconds.Now()
+        );
     }
 
     @Then("{actor} enters username {string}")
     public void userEntersUsernameUsername(Actor actor, String username) {
         actor.attemptsTo(
-                OrangeHRM_Actions.enterFirstName(username)
+                OrangeHRM_Actions.enterFirstName(username),
+                WaitSeconds.Now()
         );
     }
 }
