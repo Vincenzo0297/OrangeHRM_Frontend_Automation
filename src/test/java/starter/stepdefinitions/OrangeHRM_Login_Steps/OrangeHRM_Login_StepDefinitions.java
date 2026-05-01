@@ -7,8 +7,8 @@ import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import starter.navigation.NavigateToActions;
-import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Actions;
-import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Path_Objects;
+import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Login_Actions;
+import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Logic_Path;
 
 public class OrangeHRM_Login_StepDefinitions {
 
@@ -23,7 +23,7 @@ public class OrangeHRM_Login_StepDefinitions {
     @Then("{actor} enters username {string}")
     public void userEntersUsername(Actor actor, String username) {
         actor.attemptsTo(
-                OrangeHRM_Actions.enterUserName(username),
+                OrangeHRM_Login_Actions.enterUserName(username),
                 WaitSeconds.Now()
         );
     }
@@ -31,7 +31,7 @@ public class OrangeHRM_Login_StepDefinitions {
     @And("{actor} enters password {string}")
     public void userEntersPassword(Actor actor, String password) {
         actor.attemptsTo(
-                OrangeHRM_Actions.enterPassword(password),
+                OrangeHRM_Login_Actions.enterPassword(password),
                 WaitSeconds.Now()
         );
     }
@@ -39,15 +39,7 @@ public class OrangeHRM_Login_StepDefinitions {
     @And("{actor} click on login button")
     public void userClickOnLoginButton(Actor actor) {
         actor.attemptsTo(
-                Click.on(OrangeHRM_Path_Objects.CLICK_LOGIN_BUTTON),
-                WaitSeconds.Now()
-        );
-    }
-
-    @And("{actor} navigates to the admin page")
-    public void userNavigatesToTheAdminPage(Actor actor) {
-        actor.attemptsTo(
-                Click.on(OrangeHRM_Path_Objects.NAVIGATE_TO_ADMIN),
+                Click.on(OrangeHRM_Logic_Path.CLICK_LOGIN_BUTTON),
                 WaitSeconds.Now()
         );
     }
@@ -55,7 +47,7 @@ public class OrangeHRM_Login_StepDefinitions {
     @And("{actor} click on dropdown menu")
     public void userClickOnDropdownMenu(Actor actor) {
         actor.attemptsTo(
-                Click.on(OrangeHRM_Path_Objects.CLICK_DROPDOWN_MENU),
+                Click.on(OrangeHRM_Logic_Path.CLICK_DROPDOWN_MENU),
                 WaitSeconds.Now()
         );
     }
@@ -63,10 +55,8 @@ public class OrangeHRM_Login_StepDefinitions {
     @And("{actor} click on logout button")
     public void userClickOnLogoutButton(Actor actor) {
         actor.attemptsTo(
-                Click.on(OrangeHRM_Path_Objects.CLICK_LOGOUT_BUTTON),
+                Click.on(OrangeHRM_Logic_Path.CLICK_LOGOUT_BUTTON),
                 WaitSeconds.Now()
         );
     }
-
-
 }

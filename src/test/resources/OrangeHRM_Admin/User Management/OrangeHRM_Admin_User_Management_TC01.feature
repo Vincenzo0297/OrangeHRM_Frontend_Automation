@@ -5,11 +5,19 @@ Feature: OrangeHRM Admin Test
     Then User enters username '<Username>'
     And User enters password '<Password>'
     And User click on login button
-    And User navigates to the admin page
+    Then User navigates to the admin page
+    #Add User
+    And User click on the add button
+    And User select user role '<Role>'
+    And User enter the details
+    | Timothy Lewis Amiano |
+    | username             |
+    | password1            |
+    | password1            |
 
     Examples:
-      | Username | Password |
-      | Admin    | admin123 |
+      | Username | Password | Role  |
+      | Admin    | admin123 | Admin |
 
   #Add user
   #Edit user
