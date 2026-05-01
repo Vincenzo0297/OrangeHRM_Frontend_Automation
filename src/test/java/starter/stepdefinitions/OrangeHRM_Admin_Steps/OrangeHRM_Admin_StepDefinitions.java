@@ -3,6 +3,7 @@ package starter.stepdefinitions.OrangeHRM_Admin_Steps;
 import UilityFunctions.WaitSeconds;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import starter.fill.OrangeHRM_Admin_Logic.OrangeHRM_Admin_Actions;
@@ -29,7 +30,7 @@ public class OrangeHRM_Admin_StepDefinitions {
     }
 
     @And("{actor} selects user role {string}")
-    public void selectUserRole(Actor actor, String role, String status) {
+    public void selectUserRole(Actor actor, String role) {
         actor.attemptsTo(
                 OrangeHRM_Admin_Actions.selectDropdownOption("User Role", role)
         );
@@ -49,6 +50,46 @@ public class OrangeHRM_Admin_StepDefinitions {
                 OrangeHRM_Admin_Actions.enterUserName(UserDetails.get(1)),
                 OrangeHRM_Admin_Actions.enterPassword(UserDetails.get(2)),
                 OrangeHRM_Admin_Actions.enterConfirmPassword(UserDetails.get(3))
+        );
+    }
+
+    @When("{actor} click save button")
+    public void userClickSaveButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_SAVE_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} click on the edit button")
+    public void userClickOnTheEditButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_EDIT_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} edit the details")
+    public void userEditTheDetails(Actor actor, List<String> editDetais) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.editEmployeeName(editDetais.get(0)),
+                OrangeHRM_Admin_Actions.editUserName(editDetais.get(1))
+        );
+    }
+
+    @And("{actor} click on change password checkbox")
+    public void userClickOnChangePasswordCheckbox(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_CHANGE_PASSWORD_CHECKBOX),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} edit passwords")
+    public void userEditPasswords(Actor actor, List<String> editPasswords) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.editPassword(editPasswords.get(0)),
+                OrangeHRM_Admin_Actions.editConfirmPassword(editPasswords.get(1))
         );
     }
 }

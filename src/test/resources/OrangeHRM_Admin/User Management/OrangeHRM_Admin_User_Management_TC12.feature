@@ -6,20 +6,29 @@ Feature: OrangeHRM Admin Test
     And User enters password '<Password>'
     And User click on login button
     Then User navigates to the admin page
-    #Add User
-    And User click on the add button
+    #Edit User
+    And User click on the edit button
     And User selects user role '<Role>'
     And User selects user status '<Status>'
-    And User enter the details
+    And User edit the details
     | Rosanna Ryan Pagac   |
     | username             |
-    | password1            |
-    | password1            |
+    And User click on change password checkbox
+    And User edit passwords
+      | Password123! |
+      | Password123! |
     When User click save button
 
     Examples:
-      | Username | Password | Role    | Status  |
-      | Admin    | admin123 | Admin   | Enable  |
+      | Username | Password | Role  | Status     |
+      | Admin    | admin123 | ESS   | Disabled   |
+
+  #Add user
+  #Edit user
+  #Delete user
+  #Search for user
+  #Validate existing user
+
 
     # run in terminal
     # mvn clean verify

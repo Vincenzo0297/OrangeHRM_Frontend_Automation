@@ -18,8 +18,8 @@ Feature: OrangeHRM Admin Test
     When User click save button
 
     Examples:
-      | Username | Password | Role    | Status  |
-      | Admin    | admin123 | Admin   | Enable  |
+      | Username | Password | Role  | Status     |
+      | Admin    | admin123 | ESS   | Disabled   |
 
     # run in terminal
     # mvn clean verify
