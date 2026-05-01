@@ -8,7 +8,8 @@ Feature: OrangeHRM Admin Test
     Then User navigates to the admin page
     #Add User
     And User click on the add button
-    And User select user role '<Role>'
+    And User selects user role '<Role>'
+    And User selects user status '<Status>'
     And User enter the details
     | Timothy Lewis Amiano |
     | username             |
@@ -16,8 +17,8 @@ Feature: OrangeHRM Admin Test
     | password1            |
 
     Examples:
-      | Username | Password | Role  |
-      | Admin    | admin123 | Admin |
+      | Username | Password | Role  | Status  |
+      | Admin    | admin123 | ESS   | Disabled |
 
   #Add user
   #Edit user

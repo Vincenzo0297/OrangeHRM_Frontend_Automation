@@ -28,11 +28,17 @@ public class OrangeHRM_Admin_StepDefinitions {
         );
     }
 
-    @And("{actor} select user role {string}")
-    public void userSelectUserRoleRole(Actor actor, String role) {
+    @And("{actor} selects user role {string}")
+    public void selectUserRole(Actor actor, String role, String status) {
         actor.attemptsTo(
-                OrangeHRM_Admin_Actions.selectUserRole(role),
-                WaitSeconds.Now()
+                OrangeHRM_Admin_Actions.selectDropdownOption("User Role", role)
+        );
+    }
+
+    @And("{actor} selects user status {string}")
+    public void selectUserStatus(Actor actor, String status) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.selectDropdownOption("Status", status)
         );
     }
 
@@ -45,6 +51,4 @@ public class OrangeHRM_Admin_StepDefinitions {
                 OrangeHRM_Admin_Actions.enterConfirmPassword(UserDetails.get(3))
         );
     }
-
-
 }
