@@ -1,4 +1,4 @@
-package starter.stepdefinitions;
+package starter.stepdefinitions.OrangeHRM_Login_Steps;
 
 import UilityFunctions.WaitSeconds;
 import io.cucumber.java.en.And;
@@ -7,10 +7,10 @@ import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import starter.navigation.NavigateToActions;
-import starter.fill.OrangeHRM_Actions;
-import starter.fill.OrangeHRM_Path_Objects;
+import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Actions;
+import starter.fill.OrangeHRM_Login_Logic.OrangeHRM_Path_Objects;
 
-public class StepDefinitions {
+public class OrangeHRM_Login_StepDefinitions {
 
     @Given("{actor} navigates to the login page")
     public void userNavigatesToTheLoginPage(Actor actor) {
