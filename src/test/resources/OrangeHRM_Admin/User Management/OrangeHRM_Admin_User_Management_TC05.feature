@@ -10,6 +10,7 @@ Feature: OrangeHRM Admin Test
     And User click on the edit button
     And User selects user role '<Role>'
     And User selects user status '<Status>'
+    # Missing clear text field
     And User edit the details
     | Rosanna Ryan Pagac   |
     | username             |

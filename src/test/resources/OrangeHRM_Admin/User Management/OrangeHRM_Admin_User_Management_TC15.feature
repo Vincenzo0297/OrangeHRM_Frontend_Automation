@@ -18,9 +18,6 @@ Feature: OrangeHRM Admin Test
       | Username | Password |  Role  | Status      |
       | Admin    | admin123 |  ESS   | Enabled     |
 
-
-
-
     # run in terminal
     # mvn clean verify
     # to execute the bdd script

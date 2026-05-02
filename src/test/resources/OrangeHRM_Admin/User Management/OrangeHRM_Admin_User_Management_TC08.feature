@@ -10,6 +10,7 @@ Feature: OrangeHRM Admin Test
     And User click on the edit button
     And User selects user role '<Role>'
     And User selects user status '<Status>'
+        # Missing clear text field
     And User edit the details
     | Rosanna Ryan Pagac   |
     | username             |
@@ -18,13 +19,6 @@ Feature: OrangeHRM Admin Test
     Examples:
       | Username | Password | Role  | Status     |
       | Admin    | admin123 | ESS   | Disabled   |
-
-  #Add user
-  #Edit user
-  #Delete user
-  #Search for user
-  #Validate existing user
-
 
     # run in terminal
     # mvn clean verify
