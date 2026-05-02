@@ -92,4 +92,12 @@ public class OrangeHRM_Admin_StepDefinitions {
                 OrangeHRM_Admin_Actions.editConfirmPassword(editPasswords.get(1))
         );
     }
+
+    @And("{actor} search for Users")
+    public void userSearchForUsers(Actor actor, List<String> searchUsers) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.searchUsername(searchUsers.get(0)),
+                OrangeHRM_Admin_Actions.searchEmployeename(searchUsers.get(1))
+        );
+    }
 }

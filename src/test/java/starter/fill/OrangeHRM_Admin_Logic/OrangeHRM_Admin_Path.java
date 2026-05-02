@@ -50,4 +50,11 @@ public class OrangeHRM_Admin_Path {
 
     public static Target  EDIT_CONFIRM_PASSWORD = Target.the("edit confirm password")
             .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[2]/div/div[2]/input");
+
+    public static Target SEARCH_USER_NAME = Target.the("search user name")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
+
+    public static Target SEARCH_EMPLOYEE_NAME = Target.the("search employee name")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/input");
+
 }

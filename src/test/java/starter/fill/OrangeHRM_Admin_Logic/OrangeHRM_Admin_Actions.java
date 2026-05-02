@@ -1,14 +1,10 @@
 package starter.fill.OrangeHRM_Admin_Logic;
 import UilityFunctions.WaitSeconds;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import org.openqa.selenium.Keys;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -101,6 +97,26 @@ public class OrangeHRM_Admin_Actions {
                 actor -> {
                     actor.attemptsTo(
                             Enter.theValue(confirmPassword).into(OrangeHRM_Admin_Path.EDIT_CONFIRM_PASSWORD),
+                            WaitSeconds.Now()
+                    );
+                });
+    }
+
+    public static Performable searchUsername(String username) {
+        return Task.where("{0} search user name",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(username).into(OrangeHRM_Admin_Path.SEARCH_USER_NAME),
+                            WaitSeconds.Now()
+                    );
+                });
+    }
+
+    public static Performable searchEmployeename(String employeename) {
+        return Task.where("{0} enter employee name",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(employeename).into(OrangeHRM_Admin_Path.SEARCH_EMPLOYEE_NAME),
                             WaitSeconds.Now()
                     );
                 });
