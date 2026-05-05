@@ -1,7 +1,5 @@
 package starter.fill.OrangeHRM_Admin_Logic;
 import UilityFunctions.WaitSeconds;
-import io.cucumber.java.af.En;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -175,15 +173,57 @@ public class OrangeHRM_Admin_Actions {
                 });
     }
 
-    public static Actor.ErrorHandlingMode editPayGradeName(String editPayGradeName) {
+    public static Performable editPayGradeName(String editPayGradeName) {
+        return Task.where("{0} edit pay grade name",
+                actor -> {
+                        actor.attemptsTo(
+                                Enter.theValue(editPayGradeName).into(OrangeHRM_Admin_Path.EDIT_PAY_GRADE_NAME),
+                                WaitSeconds.Now()
+                        );
+                });
     }
 
-    public static Actor.ErrorHandlingMode selectCurrency(String s) {
+    public static Performable selectCurrency(String label, String value) {
+        return Task.where("{0} selects " + value + " from " + label,
+                actor -> {
+                    actor.attemptsTo(
+                            Click.on(OrangeHRM_Admin_Path.DROPDOWN_CURRENCY.of(label)),
+                            WaitUntil.the(OrangeHRM_Admin_Path.CURRECNY_OPTION.of(value), isVisible())
+                                .forNoMoreThan(5).seconds(),
+                            Click.on(OrangeHRM_Admin_Path.CURRECNY_OPTION.of(value))
+                    );
+                });
     }
 
-    public static Performable enterMinSalary(String s) {
+//    public static Performable selectDropdownOption(String label, String value) {
+//        return Task.where("{0} selects " + value + " from " + label,
+//                actor -> {
+//                    actor.attemptsTo(
+//                            Click.on(OrangeHRM_Admin_Path.DROPDOWN_BY_LABEL.of(label)),
+//                            WaitUntil.the(OrangeHRM_Admin_Path.OPTION.of(value), isVisible())
+//                                    .forNoMoreThan(5).seconds(),
+//                            Click.on(OrangeHRM_Admin_Path.OPTION.of(value))
+//                    );
+//                });
+//    }
+
+    public static Performable enterMinSalary(String enterMinSalary) {
+        return Task.where("{0} enter min salary",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(enterMinSalary).into(OrangeHRM_Admin_Path.ENTER_MIN_SALARY),
+                            WaitSeconds.Now()
+                    );
+                });
     }
 
-    public static Performable enterMaxSalary(String s) {
+    public static Performable enterMaxSalary(String enterMaxSalary) {
+        return Task.where("{0} enter max salary",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(enterMaxSalary).into(OrangeHRM_Admin_Path.ENTER_MAX_SALARY),
+                            WaitSeconds.Now()
+                    );
+                });
     }
 }

@@ -191,19 +191,23 @@ public class OrangeHRM_Admin_StepDefinitions {
     @And("{actor} click on the add currencies button")
     public void userClickOnTheAddCurrenciesButton(Actor actor) {
         actor.attemptsTo(
-                actor.attemptsTo(
-                        Click.on(OrangeHRM_Admin_Path.CLICK_ADD_CURRECNCIES_BUTTON),
-                        WaitSeconds.Now()
-                )
+                Click.on(OrangeHRM_Admin_Path.CLICK_ADD_CURRECNCIES_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} select currency {string}")
+    public void userSelectCurrencyCurrency(Actor actor, String selectCurrency) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.selectCurrency("Currency", selectCurrency)
         );
     }
 
     @And("{actor} add the currencies details")
     public void userAddTheCurrenciesDetails(Actor actor, List<String> currenciesDetails) {
         actor.attemptsTo(
-                OrangeHRM_Admin_Actions.selectCurrency(currenciesDetails.get(0)),
-                OrangeHRM_Admin_Actions.enterMinSalary(currenciesDetails.get(1)),
-                OrangeHRM_Admin_Actions.enterMaxSalary(currenciesDetails.get(2))
+                OrangeHRM_Admin_Actions.enterMinSalary(currenciesDetails.get(0)),
+                OrangeHRM_Admin_Actions.enterMaxSalary(currenciesDetails.get(1))
         );
     }
 

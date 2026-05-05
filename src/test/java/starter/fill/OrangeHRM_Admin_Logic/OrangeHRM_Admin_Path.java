@@ -90,8 +90,30 @@ public class OrangeHRM_Admin_Path {
     public static Target CLICK_PAY_GRADE_SAVE_BUTTON = Target.the("click pay grade save button")
             .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]");
 
-    public static final String CLICK_PAY_GRADE_EDIT_BUTTON = ;
-    public static final String CLICK_PAY_GRADE_EDIT_SAVE_BUTTON = ;
-    public static final String CLICK_ADD_CURRECNCIES_BUTTON = ;
-    public static final String CLICK_CURRECNCIES_SAVE_BUTTON = ;
+    public static Target CLICK_PAY_GRADE_EDIT_BUTTON = Target.the("click pay grade edit button")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div[3]/div/div[2]/div[1]/div/div[4]/div/button[2]");
+
+    public static Target EDIT_PAY_GRADE_NAME = Target.the("edit pay grade name")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[1]/div/form/div[1]/div/div/div/div[2]/input");
+
+    public static Target CLICK_PAY_GRADE_EDIT_SAVE_BUTTON = Target.the("click pay grade save button")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[1]/div/form/div[2]/button[2]");
+
+    public static Target CLICK_ADD_CURRECNCIES_BUTTON = Target.the("click add currencies button")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div/button");
+
+    public static Target DROPDOWN_CURRENCY = Target.the("click currency dropdown button")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[1]/div/div/div/div[2]/div/div/div[2]");
+
+    public static Target CURRECNY_OPTION = Target.the("select currency option")
+            .locatedBy("");
+
+    public static Target ENTER_MIN_SALARY = Target.the("enter min salary")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[2]/div/div[1]/div/div[2]/input");
+
+    public static Target ENTER_MAX_SALARY = Target.the("enter max salary")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[2]/div/div[2]/div/div[2]/input");
+
+    public static Target CLICK_CURRECNCIES_SAVE_BUTTON = Target.the("click save currencies button")
+            .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[3]/button[2]");
 }

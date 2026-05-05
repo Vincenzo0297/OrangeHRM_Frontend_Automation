@@ -12,15 +12,15 @@ Feature: OrangeHRM Admin Test
     And User edit pay grade name '<editPayGradeName>'
     And User click on the edit save button
     And User click on the add currencies button
+    And User select currency '<Currency>'
     And User add the currencies details
-      |  RUB     |
       |  100     |
       |  3000    |
     And User click on the currencies save button
 
     Examples:
-      | Username | Password | Job        | editPayGradeName |
-      | Admin    | admin123 | Pay Grades | lOLYOU           |
+      | Username | Password | Job        | editPayGradeName | Currency |
+      | Admin    | admin123 | Pay Grades | lOLYOU           | RUB      |
 
     # run in terminal
     # mvn clean verify
