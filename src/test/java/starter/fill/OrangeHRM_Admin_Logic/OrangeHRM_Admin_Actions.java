@@ -1,5 +1,7 @@
 package starter.fill.OrangeHRM_Admin_Logic;
 import UilityFunctions.WaitSeconds;
+import io.cucumber.java.af.En;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -162,5 +164,26 @@ public class OrangeHRM_Admin_Actions {
                             WaitSeconds.Now()
                     );
                 });
+    }
+
+    public static Performable enterPayGradeName(String payGradeName) {
+        return Task.where("{0} enter pay grade name",
+                actor -> {
+                        actor.attemptsTo(
+                                Enter.theValue(payGradeName).into(OrangeHRM_Admin_Path.ENTER_PAY_GRADE_NAME)
+                        );
+                });
+    }
+
+    public static Actor.ErrorHandlingMode editPayGradeName(String editPayGradeName) {
+    }
+
+    public static Actor.ErrorHandlingMode selectCurrency(String s) {
+    }
+
+    public static Performable enterMinSalary(String s) {
+    }
+
+    public static Performable enterMaxSalary(String s) {
     }
 }

@@ -141,4 +141,77 @@ public class OrangeHRM_Admin_StepDefinitions {
                 WaitSeconds.Now()
         );
     }
+
+    @And("{actor} click on the pay grades add button")
+    public void userClickOnThePayGradesAddButton(Actor actor) {
+        actor.attemptsTo(
+            Click.on(OrangeHRM_Admin_Path.CLICK_PAY_GRADE_ADD_BUTTON),
+            WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} enter pay grade name {string}")
+    public void userEnterPayGradeNamePayGradeName(Actor actor, String PayGradeName) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.enterPayGradeName(PayGradeName)
+        );
+    }
+
+    @And("{actor} click on the pay grade save button")
+    public void userClickOnThePayGradeSaveButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_PAY_GRADE_SAVE_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} click on the pay grade edit button")
+    public void userClickOnThePayGradeEditButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_PAY_GRADE_EDIT_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} edit pay grade name {string}")
+    public void userEditPayGradeNameEditPayGradeName(Actor actor, String editPayGradeName) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.editPayGradeName(editPayGradeName)
+        );
+    }
+
+    @And("{actor} click on the edit save button")
+    public void userClickOnTheEditSaveButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_PAY_GRADE_EDIT_SAVE_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} click on the add currencies button")
+    public void userClickOnTheAddCurrenciesButton(Actor actor) {
+        actor.attemptsTo(
+                actor.attemptsTo(
+                        Click.on(OrangeHRM_Admin_Path.CLICK_ADD_CURRECNCIES_BUTTON),
+                        WaitSeconds.Now()
+                )
+        );
+    }
+
+    @And("{actor} add the currencies details")
+    public void userAddTheCurrenciesDetails(Actor actor, List<String> currenciesDetails) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.selectCurrency(currenciesDetails.get(0)),
+                OrangeHRM_Admin_Actions.enterMinSalary(currenciesDetails.get(1)),
+                OrangeHRM_Admin_Actions.enterMaxSalary(currenciesDetails.get(2))
+        );
+    }
+
+    @And("{actor} click on the currencies save button")
+    public void userClickOnTheCurrenciesSaveButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_CURRECNCIES_SAVE_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
 }
