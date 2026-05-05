@@ -121,4 +121,46 @@ public class OrangeHRM_Admin_Actions {
                     );
                 });
     }
+
+    public static Performable selectJobOption(String label, String value) {
+        return Task.where("{0} selects " + value + " from " + label,
+                actor -> {
+                    actor.attemptsTo(
+                            Click.on(OrangeHRM_Admin_Path.JOB_DROPDOWN_BY_LABEL),
+                            WaitUntil.the(OrangeHRM_Admin_Path.JOB_OPTION.of(value), isVisible())
+                                    .forNoMoreThan(10).seconds(),
+                            Click.on(OrangeHRM_Admin_Path.JOB_OPTION.of(value))
+                    );
+                });
+    }
+
+    public static Performable enterJobTitles(String enterJobTitles) {
+        return Task.where("{0} enter job title",
+                actor -> {
+                        actor.attemptsTo(
+                                Enter.theValue(enterJobTitles).into(OrangeHRM_Admin_Path.ENTER_JOB_TITLE),
+                                WaitSeconds.Now()
+                        );
+                });
+    }
+
+    public static Performable enterJobDescription(String enterJobDescription) {
+        return Task.where("{0} enter job description",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(enterJobDescription).into(OrangeHRM_Admin_Path.ENTER_JOB_DESCRIPTION),
+                            WaitSeconds.Now()
+                    );
+                });
+    }
+
+    public static Performable enterJobNotes(String enterJobNotes) {
+        return Task.where("{0} enter job notes",
+                actor -> {
+                    actor.attemptsTo(
+                            Enter.theValue(enterJobNotes).into(OrangeHRM_Admin_Path.ENTER_JOB_NOTES),
+                            WaitSeconds.Now()
+                    );
+                });
+    }
 }

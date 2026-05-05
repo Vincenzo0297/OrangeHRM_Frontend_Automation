@@ -100,4 +100,45 @@ public class OrangeHRM_Admin_StepDefinitions {
                 OrangeHRM_Admin_Actions.searchEmployeename(searchUsers.get(1))
         );
     }
+
+    @And("{actor} select type of job {string}")
+    public void userSelectTypeOfJobJob(Actor actor, String job) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.selectJobOption("Job", job),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} click on the add button for job")
+    public void userClickOnTheAddButtonForJob(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_ADD_JOB),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} enter details")
+    public void userEnterDetails(Actor actor, List<String> JobDetails) {
+        actor.attemptsTo(
+                OrangeHRM_Admin_Actions.enterJobTitles(JobDetails.get(0)),
+                OrangeHRM_Admin_Actions.enterJobDescription(JobDetails.get(1)),
+                OrangeHRM_Admin_Actions.enterJobNotes(JobDetails.get(2))
+        );
+    }
+
+    @And("{actor} click on the save button")
+    public void userClickOnTheSaveButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_JOB_SAVE_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} click on the edit job button")
+    public void userClickOnTheEditJobButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(OrangeHRM_Admin_Path.CLICK_JOB_EDIT_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
 }

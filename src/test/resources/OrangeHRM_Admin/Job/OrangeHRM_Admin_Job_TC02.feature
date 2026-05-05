@@ -7,7 +7,8 @@ Feature: OrangeHRM Admin Test
     And User click on login button
     And User navigates to the admin page
     And User select type of job '<Job>'
-    And User click on the add button for job
+    #Missing clear text field
+    And User click on the edit job button
     #Upload file
     And User enter details
     | Lolyou |
