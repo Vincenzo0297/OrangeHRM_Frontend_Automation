@@ -19,8 +19,8 @@ Feature: OrangeHRM Admin Test
     And User click on the currencies save button
 
     Examples:
-      | Username | Password | Job        | editPayGradeName | Currency |
-      | Admin    | admin123 | Pay Grades | lOLYOU           | RUB      |
+      | Username | Password | Job        | editPayGradeName | Currency                    |
+      | Admin    | admin123 | Pay Grades | lOLYOU           | HKD - Hong Kong Dollar      |
 
     # run in terminal
     # mvn clean verify

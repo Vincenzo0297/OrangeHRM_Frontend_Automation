@@ -106,7 +106,7 @@ public class OrangeHRM_Admin_Path {
             .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[1]/div/div/div/div[2]/div/div/div[2]");
 
     public static Target CURRECNY_OPTION = Target.the("select currency option")
-            .locatedBy("");
+            .locatedBy("//div[@role='listbox']//span[text()='{0}']");
 
     public static Target ENTER_MIN_SALARY = Target.the("enter min salary")
             .locatedBy("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[2]/form/div[2]/div/div[1]/div/div[2]/input");
